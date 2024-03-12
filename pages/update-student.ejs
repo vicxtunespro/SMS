@@ -1,0 +1,83 @@
+<%- include('partials/header') %>
+    <div class="wrapper">
+        <%- include('partials/sidebar')%>
+        <div class="main-content">
+            <h3 class="main-header">Edit Student</h3>
+            <%
+                function formatDate(date) {
+                    if (!date || isNaN(date.getTime())) {
+                        return ''; 
+                    }
+                    const year = date.getFullYear();
+                    const month = String(date.getMonth() + 1).padStart(2, '0');
+                    const day = String(date.getDate()).padStart(2, '0');
+                    return `${year}-${month}-${day}`;
+                }
+            %>
+            <form action="/update/<%= student._id %>?_method=PUT" id="updateForm" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="student-details">
+                    <label for="student-details">Student Details</label>
+                    <div class="form-group">
+                        <input class="field" type="text" name="firstName" value="<%= student.studentData.firstName %>" placeholder="First Name" >
+                        <input class="field" type="text" name="middleName" value="<%= student.studentData.middleName %>" placeholder="Middle Name" >
+                        <input class="field" type="text" name="lastName" value="<%= student.studentData.lastName %>" placeholder="Last Name" >
+                    </div>
+                    <div class="form-group other-details">
+                        <input class="field" type="text" name="religion" value="<%= student.studentData.religion %>" placeholder="religion" >
+                        <select class="field" name="level">
+                            <option value="<%= student.studentData.level %>"><%= student.studentData.level %></option>
+                            <option value="Level One">Level One</option>
+                            <option value="Level Two">Level Two</option>
+                            <option value="Level Three">Level Three</option>
+                            <option value="Level Four">Level Four</option>
+                            <option value="Level Five">Level Six</option>
+                            <option value="Level Six">Level Six</option>
+                            <option value="Level Seven">Level Seven</option>
+                        </select>
+                        
+                        <input class="field" type="date" name="dateOfBirth" value= "<%= formatDate(student.studentData.dateOfBirth) || '' %>" >
+                    </div>
+                </div>
+
+                <div class="parent-details">
+                    <label for="parent-details">Parents/Guardians Details</label>
+                    <div class="form-group">
+                        <input class="field" type="text" name="fatherName" value="<%= student.parentsData.father.fullName %>" placeholder="Father/Male Guardian" >
+                        <input class="field" type="text" name="mContact" value="<%= student.parentsData.father.contact %>" placeholder="Contact">
+                        <input class="field" type="text" name="otherMcontact" value="<%= student.parentsData.father.otherContact %>" placeholder="Other Contact" >
+                    </div>
+                    <div class="form-group">
+                        <input class="field" type="email" name="mEmail" value="<%= student.parentsData.father.email %>" placeholder="Email" >
+                        <input class="field" type="text" name="mOccupation" value="<%= student.parentsData.father.occupation %>" placeholder="Occupation" >
+                    </div>
+                    <div class="form-group">
+                        <input class="field" type="text" name="motherName" value="<%= student.parentsData.mother.fullName %>" placeholder="Mother/Female Guardian" >
+                        <input class="field" type="tetx" name="fContact" value="<%= student.parentsData.mother.contact %>" placeholder="Contact" >
+                        <input class="field" type="text" name="otherFcontact" value="<%= student.parentsData.mother.otherContact %>" placeholder="Other Contact" >
+                    </div>
+                    <div class="form-group">
+                        <input class="field" type="email" name="fEmail" value="<%= student.parentsData.mother.email %>" placeholder="Email" >
+                        <input class="field" type="text" name="fOccupation" value="<%= student.parentsData.mother.occupation %>" placeholder="Occupation" >
+                    </div>
+                </div>
+                <div class="residence-details">
+                    <label for="residence-details">Residence Details</label>
+                    <div class="form-group">
+                        <input class="field" type="text" name="country" value="<%= student.residence.country %>" placeholder="Country" >
+                        <input class="field" type="tetx" name="district" value="<%= student.residence.district %>" placeholder="District" >
+                        <input class="field" type="text" name="town" value="<%= student.residence.town %>" placeholder="Town" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Update</button>
+                    
+                </div>
+            </form>
+            <form action="/student/delete/<%= student._id %>?_method=DELETE" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                 <button type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+<%- include('partials/footer')%>

@@ -1,0 +1,68 @@
+#admission-form{
+    padding: 1rem;
+    position: relative;
+
+
+    label{
+        color: $text-color-light;
+        font-size: large;
+
+        &::after{
+            content: "";
+            display: block;
+            background-color: $text-color-dim;
+            width: 100%;
+            height: 1px;
+            margin-bottom:2rem ;
+        }
+    }
+    .form-group{
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 1rem;
+
+
+        .field{
+            border: none;
+            background-color: $primary;
+            border-bottom: 1px solid #334155;
+            width: 250px;
+            padding: 0.5rem 0;
+            color: $text-color-dim;
+            transition: border-bottom 0.5s ease-in-out;
+
+            &:focus{
+                border: none;
+                background-color: $primary;
+                border-bottom: 1px solid #9cbff1;
+                outline: none;
+            }
+
+            &::placeholder{
+                color: $text-color-dim;
+            }
+            option{
+                color: $text-color-light;
+                padding: 10px 0;
+
+                &:hover{
+                    color: $primary;
+                    background-color: $text-color-light !important;
+                }
+            }
+
+            &[type="date"]::-webkit-calendar-picker-indicator{
+                background-color: $text-color-dim;
+                opacity: 0.5;
+            }
+
+            
+        }
+        button{
+            background-color: yellow;
+            border: none;
+            padding: 1rem 2rem;
+        }
+    }
+}

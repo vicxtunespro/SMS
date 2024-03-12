@@ -1,0 +1,19 @@
+<table class="data-table">
+    <thead class="table-header">
+        <th class="header-row">FirstName</th>
+        <th class="header-row">Middle Name</th>
+        <th class="header-row">Last Name</th>
+        <th class="header-row">Class</th>
+    </thead>
+    <tbody class="table-body">
+        <% students.forEach(student => { %>
+            <tr>
+                <td><%= student.firstName %></td>
+                <td><%= student.middleName %></td>
+                <td><%= student.lastName %></td>
+                <td><%= student.level %></td>
+            </tr>
+        <% }); %>
+        
+    </tbody>
+</table>

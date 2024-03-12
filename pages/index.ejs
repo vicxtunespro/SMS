@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+    <div class="wrapper">
+        <%- include('partials/sidebar')%>
+        <div class="main-content">
+            <h2 class="main-header">Students</h2>
+            <table class="data-table">
+                <thead class="table-header">
+                    <th class="header-row">FirstName</th>
+                    <th class="header-row">Middle Name</th>
+                    <th class="header-row">Last Name</th>
+                    <th class="header-row">Class</th>
+                    <th class="header-row"></th>
+                </thead>
+                <tbody class="table-body">
+                    <% students.forEach(student => { %>
+                        <tr>
+                            <td><%= student.studentData.firstName %></td>
+                            <td><%= student.studentData.lastName %></td>
+                            <td><%= student.studentData.level %></td>
+                            <td>
+                                <a href="/view/:id">View</a>
+                                <a href="/edit/<%= student._id %>">Update</a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+<%- include('partials/footer')%>

@@ -1,0 +1,32 @@
+.data-table{
+    margin-top: 1rem;
+    width: 100%;
+    border-collapse: collapse;
+
+    .table-header{
+        background: #475569;
+        text-align: left;
+        padding: 2rem;
+
+        .header-row{
+            padding: 1rem;
+            color: white;
+            font-weight: 300;
+        }
+    }
+    .table-body{
+        
+        text-align: left;
+        
+        tr{
+            background: $primary;
+            border-bottom: 1px solid #334155;
+            
+            td{
+                padding: 1rem;
+                color: white;
+                font-weight: 300;
+            }
+        }
+    }
+}

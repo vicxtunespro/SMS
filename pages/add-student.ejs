@@ -1,0 +1,64 @@
+<%- include('partials/header') %>
+    <div class="wrapper">
+        <%- include('partials/sidebar')%>
+        <div class="main-content">
+            <h3 class="main-header">Add Student</h3>
+            <form action="/admit" method="post" id="admission-form">
+                <div class="student-details">
+                    <label for="student-details">Student Details</label>
+                    <div class="form-group">
+                        <input class="field" type="text" name="firstName" placeholder="First Name" >
+                        <input class="field" type="text" name="middleName" placeholder="Middle Name" >
+                        <input class="field" type="text" name="lastName" placeholder="Last Name" >
+                    </div>
+                    <div class="form-group other-details">
+                        <input class="field" type="text" name="religion" placeholder="religion" >
+                        <select class="field" placeholder="Class" name="level">
+                            <option value="null">Choose Class</option>
+                            <option value="Level One">Level One</option>
+                            <option value="Level Two">Level Two</option>
+                            <option value="Level Three">Level Three</option>
+                            <option value="Level Four">Level Four</option>
+                            <option value="Level Five">Level Six</option>
+                            <option value="Level Six">Level Six</option>
+                            <option value="Level Seven">Level Seven</option>
+                        </select>
+                        <input class="field" type="date" name="dateOfBirth">
+                    </div>
+                </div>
+                <div class="parent-details">
+                    <label for="parent-details">Parents/Guardians Details</label>
+                    <div class="form-group">
+                        <input class="field" type="text" name="fatherName" placeholder="Father/Male Guardian" >
+                        <input class="field" type="text" name="mContact" placeholder="Contact">
+                        <input class="field" type="text" name="otherMcontact" placeholder="Other Contact" >
+                    </div>
+                    <div class="form-group">
+                        <input class="field" type="email" name="fEmail" placeholder="Email" >
+                        <input class="field" type="text" name="fOccupation" placeholder="Occupation" >
+                    </div>
+                    <div class="form-group">
+                        <input class="field" type="text" name="motherName" placeholder="Mother/Female Guardian" >
+                        <input class="field" type="tetx" name="fContact" placeholder="Contact" >
+                        <input class="field" type="text" name="otherFcontact" placeholder="Other Contact" >
+                    </div>
+                    <div class="form-group">
+                        <input class="field" type="email" name="mEmail" placeholder="Email" >
+                        <input class="field" type="text" name="mOccupation" placeholder="Occupation" >
+                    </div>
+                </div>
+                <div class="residence-details">
+                    <label for="residence-details">Residence Details</label>
+                    <div class="form-group">
+                        <input class="field" type="text" name="country" placeholder="Country" >
+                        <input class="field" type="tetx" name="district" placeholder="District" >
+                        <input class="field" type="text" name="town" placeholder="Town" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Admit Student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<%- include('partials/footer')%>
