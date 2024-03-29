@@ -45,7 +45,9 @@ Contributions are what make the open-source community such an amazing place to l
 
 ## Contact
 
-Your Name - vicitug - vicitug.com
+NUWARIMPA VICTOR [LinkedIn]
+social media @vicitug - vicitug.com
+0758019072 / 0787681472
 
 Project Link: 
 
