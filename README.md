@@ -1,6 +1,7 @@
-# School Management System
+# Student Management System
 
-This is a web-based School Management System built using Node.js, Express.js, and EJS view engine.
+This is a web-based Student Management System built using Node.js, Express.js, and EJS view engine.
+Created as a project exhibiting the concept of CRUD Operations in Backend Development 
 
 ## Features
 
